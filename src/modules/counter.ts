@@ -1,3 +1,5 @@
+// redux , redux 미들웨어 예시
+
 //액션 type 선언
 const INCREASE = 'counter/INCREASE' as const;
 const DECREASE = 'counter/DECREASE' as const;
@@ -22,7 +24,17 @@ export const increaseBy = (diff: number) => ({
 //             console.log(error);
 //         });
 // };
-
+// thunk 함수에서 async/await를 사용해도 상관 없습니다.
+// const getComments = () => async (dispatch, getState) => {
+//   const id = getState().post.activeId;
+//   dispatch({ type: 'GET_COMMENTS' });
+//   try {
+//     const comments = await api.getComments(id);
+//     dispatch({ type:  'GET_COMMENTS_SUCCESS', id, comments });
+//   } catch (e) {
+//     dispatch({ type:  'GET_COMMENTS_ERROR', error: e });
+//   }
+// }
 //액션 객체들에 대한 type 준비하기
 type CounterAction =
     | ReturnType<typeof increase>
