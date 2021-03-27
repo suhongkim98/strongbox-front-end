@@ -10,11 +10,15 @@ import baseStyled, {
     ThemedStyledInterface,
 } from 'styled-components';
 
+/* PC , 테블릿 가로 (해상도 768px ~ 1023px)*/
+/* 테블릿 세로 (해상도 768px ~ 1023px)*/
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
 const sizes:{[key:string]: number} = {
-	mobile: 450,
-	tabletS: 760,
-	tabletM: 850,
-	desktop: 1280
+	mobile: 479,
+	tabletS: 480,
+	tabletM: 768,
+	desktop: 1024
 }
 
 type BackQuoteArgs = string[];
@@ -93,6 +97,7 @@ Object.keys(sizes).reduce((acc: Media, label: string) => {
 const colors = {
     white: '#ffffff',
     black: '#000000',
+    mainColor: '#1A1A2E',
 };
 
 const secondaryColors = {};
