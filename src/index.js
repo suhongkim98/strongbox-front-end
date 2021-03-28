@@ -11,6 +11,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import GlobalStyles from './styles/GlobalStyles';
 import theme from './styles/theme';
 import { ThemeProvider } from 'styled-components';
+import ScrollToTop from './components/ScrollToTop';
 
 const store = createStore(
   rootReducer,
@@ -23,6 +24,7 @@ ReactDOM.render(
       <GlobalStyles /*가장 최상위에 두기 */ />
       <BrowserRouter>
         <ThemeProvider theme={theme}>
+          <ScrollToTop/>
           <App />
         </ThemeProvider>
       </BrowserRouter>
