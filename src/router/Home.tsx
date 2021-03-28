@@ -6,6 +6,10 @@ import androidImg from '../images/android.png';
 import Img from '../components/Img';
 import appleImg from '../images/apple.png';
 import windowsImg from '../images/windows.png';
+import {FaDownload} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import Container from '../components/Container';
+import Footer from '../components/Footer';
 
 const TotalWrapper = styled.div`
     display: grid;
@@ -63,58 +67,35 @@ const BodyWrapper = styled.section`
     display: flex;
     width: 100%;
     justify-content: center;
+
+    height :2000px;
 `;
-const DownloadNav = styled.nav``;
+const DownloadNav = styled.nav`
+    margin: 20px 0 20px 0;
+    display: flex;
+    justify-content: center;
+    
+    position: -webkit-sticky; /* 사파리 브라우저 지원 */
+    position: sticky;
+    top: 10px;
+`;
 const DownloadBtn = styled.div`
-    width: 150px;
+    width: 120px;
     height: 30px;
     background-color: ${theme.colors.mainColor};
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     border: 1px solid black;
     border-radius: 3px;
 `;
-const FooterWrapper = styled.footer`
-    background-color: ${theme.colors.mainColor};
-    display: flex;
-    width: 100%;
-    justify-content: center;
-`;
-const FooterHeader = styled.div``;
-const FooterBody = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 10px 0 0 0;
-    ${({theme}) => theme.media.desktop`  
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    `}
-`;
-const FooterCopyRight = styled.div`
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-`;
-const FooterContainerWrapper = styled.div`
-    height: 100%;
-    position: relative;
-    padding: 10px 0 0 0;
-`;
-const Container = styled.div`
-    width: 100%;
-    ${({theme}) => theme.media.desktop`  
-        width: 1000px;
-    `}
-    ${({theme}) => theme.media.tabletM`  
-        width: 700px;
-    `}
-`;
+
+
 const Home = () => {
     return (<TotalWrapper>
         <HeaderWrapper>
-            <HeaderNav><Span textColor="white">개발자에게 건의하기</Span></HeaderNav>
+            <HeaderNav><Link to="/contact"><Span textColor="white">개발자에게 건의하기</Span></Link></HeaderNav>
             <HeaderText>
                 <Span center size="4em" textColor="white" fontWeight="700">Accong Box</Span>
                 <Span center size="1.4em" textColor="white">아이디 비밀번호, 이제는 안전하게 보관하세요.</Span>
@@ -128,22 +109,11 @@ const Home = () => {
         <BodyWrapper>
             <Container>
                 <DownloadNav>
-                    <DownloadBtn><Span>icon</Span><Span textColor="white" size="1.2rem" fontWeight="700">Download</Span></DownloadBtn>
+                    <Link to="/download"><DownloadBtn><FaDownload color="white" /><Span textColor="white" size="1.2rem" fontWeight="700">Download</Span></DownloadBtn></Link>
                 </DownloadNav>
             </Container>
         </BodyWrapper>
-        <FooterWrapper>
-            <Container>
-                <FooterContainerWrapper>
-                    <FooterHeader><Span fontWeight="700" textColor="white" size="1.6rem">Accong Box</Span></FooterHeader>
-                    <FooterBody>
-                        <div><Span textColor="white" size="1.2rem">다운로드</Span></div>
-                        <div><Span textColor="white" size="1.2rem">건의하기</Span></div>
-                    </FooterBody>
-                    <FooterCopyRight><Span textColor="white" center>Copyright 2021. suhong kim All rights reserved</Span></FooterCopyRight>
-                </FooterContainerWrapper>
-            </Container>
-        </FooterWrapper>
+        <Footer/>
     </TotalWrapper>);
 }
 
