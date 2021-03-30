@@ -9,6 +9,7 @@ import androidImg from '../images/android.png';
 import Img from '../components/Img';
 import appleImg from '../images/apple-black.png';
 import windowsImg from '../images/windows.png';
+import accongImg from '../images/promotional-images/accongbox.png';
 const TotalWrapper = styled.div`
     display: grid;
     grid-template-rows: 60px 1fr 200px;
@@ -42,6 +43,11 @@ const BodyHeaderInner = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    ${({theme}) => theme.media.mobile`
+    img {
+        display:none;
+    }
+    `}
 `;
 const BodyInner = styled.div`
     display: flex;
@@ -83,7 +89,7 @@ const Download = () => {
                             </div>
                         </TextItem>
                         <div>
-                            이미지
+                            <Img src={accongImg} alt="img" width="200px" height="200px"/>
                         </div>
                     </BodyHeaderInner>
                 </Container>

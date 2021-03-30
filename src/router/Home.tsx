@@ -10,6 +10,11 @@ import {FaDownload} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Container from '../components/Container';
 import Footer from '../components/Footer';
+import PromotionImg1 from '../images/promotional-images/image1.png';
+import PromotionImg2 from '../images/promotional-images/image2.png';
+import PromotionImg3 from '../images/promotional-images/image3.png';
+import PromotionImg4 from '../images/promotional-images/image4.png';
+import PromotionImg5 from '../images/promotional-images/image5.png';
 
 const TotalWrapper = styled.div`
     display: grid;
@@ -21,7 +26,7 @@ const TotalWrapper = styled.div`
     grid-template-rows: 200px 1fr 100px;
     `}
     ${({theme}) => theme.media.mobile`  
-    grid-template-rows: 100px 1fr 100px;
+    grid-template-rows: 200px 1fr 100px;
     `}
 `;
 const HeaderWrapper = styled.header`
@@ -44,12 +49,6 @@ const HeaderText = styled.div`
     flex-direction: column;
     justify-content: space-between;
     font-size: 10px;
-    ${({theme}) => theme.media.tabletS`
-    font-size: 7px;
-    `}
-    ${({theme}) => theme.media.mobile`
-    font-size: 5px;
-    `}
 `;
 const HeaderFooter = styled.div`
     width: 200px;
@@ -67,8 +66,6 @@ const BodyWrapper = styled.section`
     display: flex;
     width: 100%;
     justify-content: center;
-
-    height :2000px;
 `;
 const DownloadNav = styled.nav`
     margin: 20px 0 20px 0;
@@ -90,7 +87,11 @@ const DownloadBtn = styled.div`
     border: 1px solid black;
     border-radius: 3px;
 `;
-
+const PromotionContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
 
 const Home = () => {
     return (<TotalWrapper>
@@ -111,6 +112,13 @@ const Home = () => {
                 <DownloadNav>
                     <Link to="/download"><DownloadBtn><FaDownload color="white" /><Span textColor="white" size="1.2rem" fontWeight="700">Download</Span></DownloadBtn></Link>
                 </DownloadNav>
+                <PromotionContainer>
+                    <Img src={PromotionImg1} alt="img" />
+                    <Img src={PromotionImg2} alt="img" />
+                    <Img src={PromotionImg3} alt="img" />
+                    <Img src={PromotionImg4} alt="img" />
+                    <Img src={PromotionImg5} alt="img" />
+                </PromotionContainer>
             </Container>
         </BodyWrapper>
         <Footer/>
