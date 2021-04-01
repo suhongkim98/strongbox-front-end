@@ -5,6 +5,8 @@ import Container from '../components/Container';
 import Footer from '../components/Footer';
 import Span from '../components/Span';
 import theme from '../styles/theme';
+import Img from '../components/Img';
+import accongImg from '../images/promotional-images/accongbox.png';
 const TotalWrapper = styled.div`
     display: grid;
     grid-template-rows: 60px 1fr 200px;
@@ -67,7 +69,7 @@ const Contact = () => {
                             </div>
                         </TextItem>
                         <div>
-                            이미지
+                            <Img src={accongImg} alt="img" width="200px" height="200px"/>
                         </div>
                     </BodyHeaderInner>
                 </Container>
