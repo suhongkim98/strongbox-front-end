@@ -6,6 +6,7 @@ interface SpanProps {
     fontWeight?:any;
     children?:any;
     center?:boolean;
+    lineHeight?:string;
 }
 const Wrapper = styled.span<SpanProps>`
 ${({textColor}) => 
@@ -25,10 +26,14 @@ ${({center}) =>
     center &&
     `text-align: center;`
 }
+${({lineHeight}) => 
+    lineHeight &&
+    `line-height: ${lineHeight};`
+}
 `;
 
-const Span = ({textColor,size,fontWeight,children, center}:SpanProps) =>{
-return <Wrapper textColor={textColor} size={size} fontWeight={fontWeight} center={center}>{children}</Wrapper>
+const Span = ({textColor,size,fontWeight,children, center,lineHeight}:SpanProps) =>{
+return <Wrapper textColor={textColor} size={size} fontWeight={fontWeight} center={center} lineHeight={lineHeight}>{children}</Wrapper>
 }
 
 export default Span;
